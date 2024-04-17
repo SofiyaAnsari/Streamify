@@ -14,11 +14,11 @@ export default function ListItem({ index, item }) {
   const [movie, setMovie] = useState({});
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
-
+  const axiosInstance=axios.create({baseURL:ProcessingInstruction.env.REACT_APP_API_URL,});
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get("/movies/find/" + item, {
+        const res = await axiosInstance.get("/movies/find/" + item, {
           headers: {
             token:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzQ1YTI2NWQ2OTdlZTZhNGQ2M2FmMSIsImlhdCI6MTcxMTQyNDMyMywiZXhwIjoxNzExODU2MzIzfQ.pQNbc04i2pNnh63feiCvW-g3sVKS75eoIfE9-qJRSE0",

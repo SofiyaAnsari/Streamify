@@ -9,12 +9,12 @@ import Watch from "../watch/Watch";
 const Home = ({ type, setGenre }) => {
   const [lists, setLists] = useState([]);
   const [hoveredMovie, setHoveredMovie] = useState(null);
-
+const axiosInstance=axios.create({baseURL:ProcessingInstruction.env.REACT_APP_API_URL,});
   useEffect(() => {
     const getRandomLists = async () => {
       try {
         axios.defaults.baseURL = "http://localhost:8800/api/";
-        const res = await axios.get(`lists${type ? "?type=" + encodeURIComponent(type) : ""}`, {
+        const res = await axiosInstance.get(`lists${type ? "?type=" + encodeURIComponent(type) : ""}`, {
           // Ensure that your API endpoint supports the 'type' query parameter
           headers: {
             token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzQ1YTI2NWQ2OTdlZTZhNGQ2M2FmMSIsImlhdCI6MTcxMTQyNDMyMywiZXhwIjoxNzExODU2MzIzfQ.pQNbc04i2pNnh63feiCvW-g3sVKS75eoIfE9-qJRSE0"

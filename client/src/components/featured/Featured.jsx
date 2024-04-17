@@ -8,11 +8,11 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 export default function Featured({ type, setGenre }) {
 	const [content, setContent] = useState({});
 	const navigate = useNavigate(); // Initialize useNavigate
-
+	const axiosInstance=axios.create({baseURL:ProcessingInstruction.env.REACT_APP_API_URL,});
 	useEffect(() => {
 		const getRandomContent = async () => {
 			try {
-				const res = await axios.get(`/movies/random?type=${type}`, {
+				const res = await axiosInstance.get(`/movies/random?type=${type}`, {
 					headers: {
 						token:
 							"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YzQ1YTI2NWQ2OTdlZTZhNGQ2M2FmMSIsImlhdCI6MTcxMDk5MDExOCwiZXhwIjoxNzExNDIyMTE4fQ.fkObCVxxRjZtMj3yzC-H-VpxcZgGlTmdyC98NtQKfes",

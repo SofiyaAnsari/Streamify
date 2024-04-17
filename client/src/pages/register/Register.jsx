@@ -5,6 +5,7 @@ import "./register.scss";
 
 export default function Register() {
     const navigate = useNavigate();
+    const axiosInstance=axios.create({baseURL:ProcessingInstruction.env.REACT_APP_API_URL,});
     const [formData, setFormData] = useState({
         email: "",
         username: "",
@@ -41,7 +42,7 @@ export default function Register() {
         }
 
         try {
-            await axios.post("http://localhost:8800/api/auth/register", formData);
+            await axiosInstance.post("http://localhost:8800/api/auth/register", formData);
             navigate("/subscription");
         } catch (err) {
             console.log(err);
