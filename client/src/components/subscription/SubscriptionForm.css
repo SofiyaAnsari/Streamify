@@ -1,0 +1,71 @@
+.subscription-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    margin: 0 auto;
+}
+
+.subscription-form div {
+    margin-bottom: 15px;
+}
+
+.subscription-form label {
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.subscription-form input[type="text"],
+.subscription-form input[type="number"] {
+    color: black; /* Change text color to black or a contrasting color */
+    background-color: white; /* Change background color to white or a lighter color */
+    border: 1px solid #ccc; /* Add border for better visibility */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Add a subtle box-shadow */
+    padding: 10px; /* Add padding for better spacing */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    width:350px;
+}
+
+
+.subscription-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+                color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscription-form button[type="submit"]:hover {
+    background-color: #00b330;
+}
+
+
+/* SubscriptionForm.css */
+
+.card-element {
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width:350px;
+}
+
+/* Add styles for focus and invalid states as before */
+.card-element--focus {
+    outline: 0;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.card-element--invalid {
+    outline: 0;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+  
